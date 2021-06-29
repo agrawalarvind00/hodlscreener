@@ -1,0 +1,85 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HodLScreener</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{%static 'style.css'%}">
+    <script src="{%static 'script.js'%}"></script>
+</head>
+<body>
+    <div class="container-fluid pt-3">
+        <div class="row">
+            <div class="col-md-4">
+                <h1>HODLSCREENER</h1>
+            </div>
+            <div class="col-md-4">
+                <form>
+                    <div class="col-fourth">
+                        <label for="currency">currency</label>
+                        <select name="currency" id="currency">
+                            <option value="1">OPT</option>
+                            <option value="2">OPT</option>
+                            <option value="3">OPT</option>
+                        </select>
+                    </div>
+                    <div class="col-fourth">
+                        <label for="bitcoin">bitcoin</label>
+                        <select name="bitcoin" id="bitcoin">
+                            <option value="1">OPT</option>
+                            <option value="2">OPT</option>
+                            <option value="3">OPT</option>
+                        </select>
+                    </div>
+                    <input type="submit" id="submit" value="BUY BTC">
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>        
+    </div>
+    <div class="container-fluid pt-3">
+        <div class="row">
+            <div class="col-md-1 align-self-center" style="text-align: center; color: #ffdb29;">
+                UPDATES:
+            </div>
+            <div class="col-md-11 container-fluid row">
+                <button type="button" onclick="leftScroll()"><</button>
+                <div class="updates" id="scroll">
+                    <div class="update-box">
+                        <img src="" width="94px" height="40px" style="position:relative; top: -13px;">
+                        <div class="up-box" style="display: inline-block;">
+                            <p>Company A stocks went up and to know the reason click on this section.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <button type="button" onclick="rightScroll()">></button>
+            </div>
+        </div>
+        
+        <div class="row pt-3">
+            <div class="bit-val">
+                <div class="val-box">
+                    <div style="color: #fff;">Bitcoin (BTC)</div>
+                    <div style="font-size: 14px; display: inline-block;color: #fff;">$15423</div>
+                    <div style="font-size: 10px; display: inline-block;color: #5AFF4F;">^1.05%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container-fluid" style="color: #ffdb29;">
+        <div class="row">
+                <div class="col-sm-1 section"><u>SECTIONS:</u></div>
+                <div class="col-md-1"><a href="\">COIN</a></div>
+                <div class="col-sm-1"><a href="\news">NEWS</a></div>
+                <div class="col-sm-1"><a href="\blogs">BLOGS</a></div>
+        </div>        
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{% block content %}
+<div class="container article">
+    <div class="row">
+        {% for blog in blogs %}
+        <div class="col-md-6">
+            <a href=""><div class="container box">
+                <div class="head-image"><img width="87px" height="87px" src="{{blog.head_img.url}}"></div>
+                <div class="blogtitle">{{blog.title}}</div>
+                <div class="author"><i>by {{blog.author}}</i></div>
+                <div class="time"><i>by {{blog.author}}</i></div>
+            </div></a>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+{% endblock %}
