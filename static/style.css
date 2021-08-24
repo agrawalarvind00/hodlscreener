@@ -108,10 +108,7 @@ a:hover {
     text-decoration: underline;
 }
 .article-box{
-    background-color: #ffdb29;
     width: 100%;
-    margin: 10px;
-    height: 1000px;
 }
 .blogtitle{
     position: absolute;
@@ -135,7 +132,7 @@ a:hover {
 .time {
     position: absolute;
     right: 20px;
-    bottom: 10px;
+    top: 80px;
 }
 .up-box {
     color: #fff; 

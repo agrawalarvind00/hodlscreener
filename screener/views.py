@@ -11,29 +11,24 @@ def news(request):
 
 def blogs(request):
     blogs = models.Blog.objects.all()
-    num = len(blogs)
-    print(num)
-    for i in range(0,num,2):
-        print(i)
-        print(i+1)
-    return render(request,'blogs.html',{'blogs':blogs, 'num':num})
+    return render(request,'blogs.html',{'blogs':blogs})
 
-def test(request):
-    obj = models.Blog.objects.all()
-    context = {'obj':obj}
-    return render(request,'image.html',context)
+def dashboard(request):
+    blogs = models.Blog.objects.all()
+    context = {'blogs':blogs}
+    return render(request,'dashboard.html',context)
 
-def test2(request):
+def new_blog(request):
     if request.method == 'POST':
         form = BlogForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('test')
+            return redirect('dashboard')
     else:
         form = BlogForm()
-    return render(request,'test2.html',{'form':form})
+    return render(request,'new_blog.html',{'form':form})
 
-def test3(request,blog_id=None):
+def edit_blog(request,blog_id=None):
     item = get_object_or_404(models.Blog,id=blog_id)
     form = BlogForm(instance=item)
     if request.method == 'POST':
@@ -41,4 +36,15 @@ def test3(request,blog_id=None):
         if form.is_valid():
             form.save()
             return redirect('test')
-    return render(request,'test2.html',{'form':form})
+    return render(request,'edit_blog.html',{'form':form})
+
+def view_blog(request,slug):
+    blogs = models.Blog.objects.all()
+    return render(request,'blogpost.html',{'article':get_object_or_404(models.Blog,slug=slug),'blogs':blogs})
+
+def delete_blog(request,blog_id=None):
+    blog = get_object_or_404(models.Blog,id=blog_id)
+    if request.method == 'POST':
+        blog.delete()
+        return redirect('dashboard')
+    return render(request,'delete_blog.html',{'blog':blog})

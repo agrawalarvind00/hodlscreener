@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 article">
+            <div class="article-box">
+                <div class="container box">
+                    <div class="head-image"><img width="87px" height="87px" src="{{article.head_img.url}}"></div>
+                    <div class="blogtitle">{{article.title}}</div>
+                    <div class="author"><i>by {{article.author}}</i></div>
+                    <div class="time"><i>{{article.time}}</i></div>
+                </div>
+                {{article.description|safe}}
+            </div>
+        </div>
+        
+        <div class="col-md-6 article">
+            {% for blog in blogs %}
+            <a href="{{ blog.get_absolute_url }}"><div class="container box" style="position: relative;">
+                <div class="head-image"><img width="87px" height="87px" src="{{blog.head_img.url}}"></div>
+                <div class="blogtitle">{{blog.title}}</div>
+                <div class="author"><i>by {{blog.author}}</i></div>
+                <div class="time"><i>{{blog.time}}</i></div>
+            </div></a>
+            {%endfor%}
+        </div>
+    
+    </div>
+</div>
+{% endblock %}
