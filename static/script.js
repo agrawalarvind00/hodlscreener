@@ -23,14 +23,14 @@ function sideScroll(element,direction,speed,distance,step){
     }, speed);
 }
 
-function generate_table(data,currency) {
+function generate_table() {
     var tabBody = document.getElementsByTagName("tbody")[0];
 
     for(var i=0;i<2;i++){
         var row = document.createElement("tr");
         for(var j=0;j<5;j++){
             var cell = document.createElement("td");
-            var cellText = document.createTextNode(data[currency][i][j]);
+            var cellText = document.createTextNode(data[btc][currency][i][j]);
             cell.appendChild(cellText);
             row.appendChild(cell);
         }
@@ -38,16 +38,16 @@ function generate_table(data,currency) {
     }
 }
 
-function change_table(data){
+function change_table(){
     var tabBody = document.getElementsByTagName("tbody")[0];
     tabBody.innerHTML = "";
-    var opt = document.getElementById("currency");
-    var currency = opt.value;
+    currency = document.getElementById("currency").value;
+    btc = document.getElementById("bitcoin").value;
     for(var i=0;i<2;i++){
         var row = document.createElement("tr");
         for(var j=0;j<5;j++){
             var cell = document.createElement("td");
-            var cellText = document.createTextNode(data[currency][i][j]);
+            var cellText = document.createTextNode(data[btc][currency][i][j]);
             cell.appendChild(cellText);
             row.appendChild(cell);
         }

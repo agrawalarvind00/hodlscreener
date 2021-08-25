@@ -16,8 +16,10 @@
         </table>
         <script>
             let data = {{tableData | safe}};
+            var currency="USD";
+            var btc="BTC";
 
-            generate_table(data,"USD");
+            generate_table();
         </script>
     </div>
 </div>

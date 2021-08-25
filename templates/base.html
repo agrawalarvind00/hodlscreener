@@ -19,7 +19,7 @@
             <div class="justify-content-center col-md-4 col-sm-12 container row header">
                     <div class="col-3">
                         <label for="currency">currency</label>
-                        <select name="currency" id="currency" onchange="change_table(data)">
+                        <select name="currency" id="currency" onchange="change_table()">
                             <option value="USD">USD</option>
                             <option value="GPB">GPB</option>
                             <option value="Euro">Euro</option>
@@ -30,10 +30,19 @@
                     </div>
                     <div class="col-3">
                         <label for="bitcoin">bitcoin</label>
-                        <select name="bitcoin" id="bitcoin">
-                            <option value="1">OPT</option>
-                            <option value="2">OPT</option>
-                            <option value="3">OPT</option>
+                        <select name="bitcoin" id="bitcoin" onchange="change_table()">
+                            <option value="BTC">BTC</option>
+                            <option value="ETH">ETH</option>
+                            <option value="ADA">ADA</option>
+                            <option value="BNB">BNB</option>
+                            <option value="USDT">USDT</option>
+                            <option value="XRP">XRP</option>
+                            <option value="DOT">DOT</option>
+                            <option value="BCH">BCH</option>
+                            <option value="LINK">LINK</option>
+                            <option value="LTC">LTC</option>
+                            <option value="XLM">XLM</option>
+                            <option value="XMR">XMR</option>
                         </select>
                     </div>
                     <a href="https://www.coinmarketcap.com" id="submit">BUY BTC</a>
