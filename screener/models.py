@@ -17,7 +17,7 @@ class Blog(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        if self.slug is None:
-            self.slug = slugify(self.title)
-            self.save()
+        #if self.slug is None:
+        self.slug = slugify(self.title)
+        self.save()
         return reverse('view_blog', args = (self.slug,))

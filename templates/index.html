@@ -2,7 +2,7 @@
 {%block content%}
 <div class="container">
     <div class="row table-responsive">
-        <table class="table table-bordered">
+        <table class="table table-bordered val-table">
             <thead>
                 <th>#</th>
                 <th>PLatform</th>
@@ -11,22 +11,14 @@
                 <th>Difference</th>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Coin 1</td>
-                    <td>425201</td>
-                    <td>452505/425502</td>
-                    <td>42525</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Coin 1</td>
-                    <td>425201</td>
-                    <td>452505/425502</td>
-                    <td>42525</td>
-                </tr>
+                
             </tbody>
         </table>
+        <script>
+            let data = {{tableData | safe}};
+
+            generate_table(data,"USD");
+        </script>
     </div>
 </div>
 {%endblock%}

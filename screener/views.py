@@ -4,7 +4,15 @@ from screener import models
 
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    tableData = {
+        "USD":[[1,"USD","32108","12457/54876","0.09%"],[1,"BTC","32108","12457/54876","0.09%"],],
+        "GPB":[[1,"GPB","32108","12457/54876","0.09%"],[1,"BTC","32108","12457/54876","0.09%"],],
+        "Euro":[[1,"Euro","32108","12457/54876","0.09%"],[1,"BTC","32108","12457/54876","0.09%"],],
+        "RMB":[[1,"RMB","32108","12457/54876","0.09%"],[1,"BTC","32108","12457/54876","0.09%"],],
+        "INR":[[1,"INR","32108","12457/54876","0.09%"],[1,"BTC","32108","12457/54876","0.09%"],],
+        "Yen":[[1,"Yen","32108","12457/54876","0.09%"],[1,"BTC","32108","12457/54876","0.09%"],],
+    }
+    return render(request,'index.html',{'tableData':tableData})
 
 def news(request):
     return render(request,'news.html')

@@ -3,6 +3,7 @@ body{
     font-family: Montserrat;
     margin: 0;
     font-size: 11px;
+    height: 100vh;
 }
 h1{
     color: #ffdb29;
@@ -25,20 +26,6 @@ label {
     margin: 0;
 }
 
-.col-fourth {
-    margin: 0;
-    width: 25%;
-    display: inline-block;
-}
-
-#submit {
-    background-color: #FFDB29;
-    color: #4d4d4d;
-    border: 3px dashed #FFDB29;
-    border-radius: 5px;
-    font-size: 11px;
-    padding: 3px 1em;
-}
 select {
     text-align: center;
     font-size: 11px;
@@ -95,6 +82,12 @@ button{
     color: #fff;
     margin: 10px 0px;
 }
+button:active{
+    background: none;
+    border: none;
+    color: #fff;
+    margin: 10px 0px;
+}
 a{
     box-sizing: border-box;
     padding-bottom: 2px;
@@ -140,4 +133,21 @@ a:hover {
     text-align: left;
     line-height : 1.2;
     white-space: normal;
+}
+
+.header {
+    position: relative;
+}
+
+#submit {
+    position: absolute;
+    background-color: #FFDB29;
+    color: #4d4d4d;
+    border-radius: 5px;
+    font-size: 11px;
+    padding: 0 5px;
+    height: 27px;
+    line-height: 27px;
+    bottom: 5px;
+    left: 75%;
 }
